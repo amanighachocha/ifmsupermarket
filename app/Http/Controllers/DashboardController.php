@@ -11,6 +11,13 @@ use App\Models\User;
 
 class DashboardController extends Controller
 {
+	/**
+	 * Define a constructor
+	 */
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
     /**
      * Display dashboard homepage
      */

@@ -18,6 +18,8 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
-Route::get('/', [HomeController::class,'index']);
+Route::get('/', [HomeController::class,'index'])->name('login');
+Route::get('logout',[SessionController::class,'destroy'])->name('logout');
 Route::post('authenticate',[SessionController::class,'store']);
 Route::get('categories',[DashboardController::class,'showCategories']);
+Route::get('locale/{locale}',[HomeController::class,'changeLocale']);

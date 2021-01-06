@@ -12,8 +12,9 @@
 </head>
 <body>
       
-      <h1>IFM Students Supermarket</h1>
-      <p>Welcome!</p>
+      <h1>@lang('messages.title')</h1>
+      <p>Welcome! {{ auth()->user()->name }}</p>
+      <p><a href="{{ url('logout') }}">@lang('messages.logout')</a></p>
 
       <table>
         <thead>

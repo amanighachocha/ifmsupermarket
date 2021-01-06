@@ -12,8 +12,11 @@
 </head>
 <body>
       
-      <h1>IFM Students Supermarket</h1>
-      <p>Welcome!</p>
+      <h1>{{ __('messages.title') }}</h1>
+      <p>Welcome! @if(auth()->check()) {{ auth()->user()->name }} @endif</p>
+      <p><a href="{{ url('logout') }}">{{ __('messages.logout') }}</a></p>
+      <p><a href="{{ url('locale/en') }}">English</a></p>
+      <p><a href="{{ url('locale/sw') }}">Swahili</a></p>
 
       <?php
            $email = [
