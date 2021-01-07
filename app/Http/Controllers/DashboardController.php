@@ -32,7 +32,7 @@ class DashboardController extends Controller
     public function showCategories()
     {
     	$data = [
-           'categories'=>Category::with('products')->get(),
+           'categories'=>Category::with('products')->paginate(2),
     	];
         return view('categories',$data)->withTitle('Categories | Supermarket');
     }
