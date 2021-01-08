@@ -26,7 +26,9 @@
           <div class="row">
           <div class="col-md-4">
              <ul class="list-group">
+                @can('add-user'))
                 <a href="{{ url('users') }}" class="list-group-item">Users</a>
+                @endcan
                 <a href="{{ url('products') }}" class="list-group-item">Products</a>
                 <a href="{{ url('sales') }}" class="list-group-item">Sales</a>
                 <a href="{{ url('categories') }}" class="list-group-item">Categories</a>

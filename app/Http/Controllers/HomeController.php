@@ -3,27 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App;
 
 class HomeController extends Controller
 {
     /**
-     * Display home page
+     * Create a new controller instance.
+     *
+     * @return void
      */
-    public function index()
+    public function __construct()
     {
-    	$data = [
-            'name'=>'Daniel'
-    	];
-    	return view('index',$data);
+        $this->middleware('auth');
     }
 
     /**
-     * Change locale
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function changeLocale($locale)
+    public function index()
     {
-    	app()->setLocale($locale);
-    	return redirect()->back();
+        return view('home');
     }
 }
